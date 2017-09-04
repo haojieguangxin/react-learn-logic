@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <button onclick="alert(111);">
+        弹出alert框
+    </button>
+
+    <a href="http://cn.made-in-china.com" onclick="return false;">阻止默认事件</a>
+
+    <button id="testButton">
+        Show inner this
+    </button>
+    <script>
+//        'use strict';
+//        function Test() {
+//            this.testName = 'xiaoming';
+//        }
+//        Test.prototype.showName = function() {
+//            console.log(this);
+//            console.log(this.testName);
+//        };
+//        var test = new Test();
+//        test.showName();
+//        document.getElementById('testButton').addEventListener('click', test.showName);
+
+        class Test {
+            constructor() {
+                this.testName = 'xiaoming';
+            }
+            showName(e) {
+                console.log(e);
+                console.log(this);
+            }
+            addEvent() {
+                document.getElementById('testButton').addEventListener('click', test.showName.bind(this));
+            }
+        }
+        let test = new Test();
+        test.addEvent();
+
+    </script>
+</body>
+</html>
