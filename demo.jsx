@@ -8,9 +8,9 @@ import Form from './components/demo/Form.jsx';
 ReactDom.render(
     (
         <div>
-            <Condition isImportant={true} />
-            <Loop />
-            <Event />
+            {/*<Condition isImportant={true} />*/}
+            {/*<Loop />*/}
+            {/*<Event />*/}
             <Form />
         </div>
     ),
